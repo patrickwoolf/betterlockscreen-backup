@@ -1,0 +1,22 @@
+# /lib/systemd/system/lock@.service
+[Unit]
+Description = Lock screen when going to sleep/suspend
+Before=sleep.target
+Before=suspend.target
+
+[Service]
+User=%I
+# for i3lock-color
+Type=forking
+# for betterlockscreen
+#Type=simple
+Environment=DISPLAY=:0
+ExecStart=/home/patricia/.local/bin/lock
+#ExecStart=/home/patricia/.local/bin/betterlockscreen -l blur
+TimeoutSec=infinity
+# for betterlockscreen, cannot use with i3lock-color
+#ExecStartPost=/usr/bin/sleep 1
+
+[Install]
+WantedBy=sleep.target
+WantedBy=suspend.target
