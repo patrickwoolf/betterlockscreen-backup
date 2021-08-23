@@ -31,7 +31,7 @@ $BASEDIR/i3lock \
 --bshl-color=$WRONG          \
 \
 --screen 1                   \
---blur 1                     \
+--blur 5                     \
 --clock                      \
 --indicator                  \
 --time-str="%H:%M:%S"        \
