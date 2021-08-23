@@ -1,5 +1,6 @@
 #!/bin/sh
 
+BASEDIR=$(dirname "$0")
 BLANK='#00000000'
 CLEAR='#ffffff22'
 #DEFAULT='#ff00ffcc'
@@ -9,7 +10,7 @@ TEXT='#E4A7A9'
 WRONG='#880000bb'
 VERIFYING='#bb00bbbb'
 
-i3lock-color \
+$BASEDIR/i3lock \
 --insidever-color=$CLEAR     \
 --ringver-color=$VERIFYING   \
 \
@@ -36,10 +37,9 @@ i3lock-color \
 --time-str="%H:%M:%S"        \
 --date-str="%A, %m %Y"       \
 --keylayout 1                \
--i /home/patricia/Pictures/koupen.png \
+-i $BASEDIR/koupen-big.png \
 
 
 #-C \
 #convert /usr/share/backgrounds/Origin_of_nature_by_Julian_Tomasini.jpg -resize $(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/') RGB:- | i3lock-color --raw $(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/'):rgb --image /dev/stdin
 #-i /usr/share/backgrounds/Origin_of_nature_by_Julian_Tomasini.jpg \
-
